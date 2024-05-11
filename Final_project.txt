@@ -208,3 +208,11 @@ public:
         }
         return false; // Default to false if no permission set
     }
+11)Reporting:
+class Reporting {
+public:
+    void checkReporting(const string& username) {
+        // Simulated function to check Reporting
+        cout << "Displaying history for user '" << username << "'.\n";
+        // Display charts, graphs, or progress bars here
+    }
