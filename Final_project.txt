@@ -39,3 +39,29 @@ public:
     const string& getPassword() const {
         return password;
     }
+3)Goal_setting:
+class GoalSetting {
+private:
+    struct Goal {
+        string username;
+        string goal;
+
+        Goal(const string& u, const string& g) : username(u), goal(g) {}
+    };
+
+    vector<Goal> goals;
+
+public:
+    void setGoal(const string& username, const string& goal) {
+        goals.push_back(Goal(username, goal));
+        cout << "Goal set successfully for user " << username << ".\n";
+    }
+
+    void displayGoals(const string& username) {
+        cout << "Goals for user " << username << ":\n";
+        for (const auto& goal : goals) {
+            if (goal.username == username) {
+                cout << "- " << goal.goal << endl;
+            }
+        }
+    }
