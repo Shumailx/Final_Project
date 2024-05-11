@@ -270,3 +270,31 @@ public:
     const string& getPassword() const {
         return password;
     }
+15)Integraion:
+class Integraion {
+private:
+    struct Progress {
+        string goal;
+        int percentage;
+
+        Progress(const string& g, int p) : goal(g), percentage(p) {}
+    };
+
+    vector<IProgress> Progress;
+
+public:
+    void trackProgress(const string& goal, int percentage) {
+        progress.push_back(Progress(goal, percentage));
+        cout << "Progress tracked for goal '" << goal << "': " << percentage << "% completed.\n";
+    }
+
+    void displayProgress(const string& goal) {
+        cout << "Progress for goal '" << goal << "': ";
+        for (const auto& p : progress) {
+            if (p.goal == goal) {
+                cout << p.percentage << "% completed\n";
+                return;
+            }
+        }
+        cout << "Not tracked yet\n";
+    }
