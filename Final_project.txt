@@ -93,3 +93,41 @@ public:
         }
         cout << "Not tracked yet\n";
     }
+5)Task_management:
+class TaskManagement {
+private:
+    struct Task {
+        string goal;
+        string name;
+        bool completed;
+
+        Task(const string& g, const string& n) : goal(g), name(n), completed(false) {}
+    };
+
+    vector<Task> tasks;
+
+public:
+    void addTask(const string& goal, const string& taskName) {
+        tasks.push_back(Task(goal, taskName));
+        cout << "Task '" << taskName << "' added to goal '" << goal << "'.\n";
+    }
+
+    void displayTasks(const string& goal) {
+        cout << "Tasks for goal '" << goal << "':\n";
+        for (const auto& task : tasks) {
+            if (task.goal == goal) {
+                cout << "- " << (task.completed ? "[X] " : "[ ] ") << task.name << endl;
+            }
+        }
+    }
+
+    void markTaskAsCompleted(const string& goal, const string& taskName) {
+        for (auto& task : tasks) {
+            if (task.goal == goal && task.name == taskName) {
+                task.completed = true;
+                cout << "Task '" << taskName << "' marked as completed for goal '" << goal << "'.\n";
+                return;
+            }
+        }
+        cout << "Task not found for goal '" << goal << "'.\n";
+    }
