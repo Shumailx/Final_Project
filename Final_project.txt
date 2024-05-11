@@ -216,3 +216,30 @@ public:
         cout << "Displaying history for user '" << username << "'.\n";
         // Display charts, graphs, or progress bars here
     }
+12)Customization:
+class Customization {
+private:
+    struct Permission {
+        string goal;
+        string username;
+        bool canEdit;
+
+        Permission(const string& g, const string& u, bool edit) : goal(g), username(u), canEdit(edit) {}
+    };
+
+    vector<Permission> permissions;
+
+public:
+    void grantPermission(const string& goal, const string& username, bool canEdit) {
+        permissions.push_back(Permission(goal, username, canEdit));
+        cout << "Permission granted for user '" << username << "' on goal '" << goal << "'.\n";
+    }
+
+    bool hasPermission(const string& goal, const string& username) {
+        for (const auto& perm : permissions) {
+            if (perm.goal == goal && perm.username == username) {
+                return perm.canEdit;
+            }
+        }
+        return false; // Default to false if no permission set
+    }
