@@ -131,3 +131,9 @@ public:
         }
         cout << "Task not found for goal '" << goal << "'.\n";
     }
+6)Reminder_and_Notification:
+class RemindersAndNotifications {
+public:
+    void sendReminder(const string& username, const string& message) {
+        cout << "Reminder sent to user '" << username << "': " << message << endl;
+    }
