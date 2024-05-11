@@ -137,3 +137,11 @@ public:
     void sendReminder(const string& username, const string& message) {
         cout << "Reminder sent to user '" << username << "': " << message << endl;
     }
+7)History:
+class History {
+public:
+    void checkHistory(const string& username) {
+        // Simulated function to check history
+        cout << "Displaying history for user '" << username << "'.\n";
+        // Display charts, graphs, or progress bars here
+    }
