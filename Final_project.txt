@@ -145,3 +145,10 @@ public:
         cout << "Displaying history for user '" << username << "'.\n";
         // Display charts, graphs, or progress bars here
     }
+8)Collaboration:
+class Collaboration {
+public:
+    void collaborateOnGoal(const string& goal, const string& collaborator) {
+        cout << "Collaborating on goal '" << goal << "' with user '" << collaborator << "'.\n";
+        // Implement collaboration features like shared task lists and progress updates
+    }
